@@ -1,0 +1,6 @@
+<launch>
+	<arg name="va" default="0" />
+	<node name="random_position_server" pkg="holo_control" type="random_position_server" output="screen"/>
+	<node name="target_velocity_server" pkg="holo_control" type="target_velocity_server" output="screen"/>
+	<node name="holo_movement" pkg="holo_control" type="holo_movement" args="$(arg va)" output="screen"/>
+</launch>

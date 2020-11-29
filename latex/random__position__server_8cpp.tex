@@ -1,0 +1,64 @@
+\hypertarget{random__position__server_8cpp}{}\section{random\+\_\+position\+\_\+server.\+cpp File Reference}
+\label{random__position__server_8cpp}\index{random\+\_\+position\+\_\+server.\+cpp@{random\+\_\+position\+\_\+server.\+cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}holo\+\_\+control/\+Target\+Pos.\+h\char`\"{}}\\*
+Include dependency graph for random\+\_\+position\+\_\+server.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{random__position__server_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{random__position__server_8cpp_aa87fa309f7fd2e88fd4091f304ed3a47}{rand\+\_\+pos} (holo\+\_\+control\+::\+Target\+Pos\+::\+Request \&req, holo\+\_\+control\+::\+Target\+Pos\+::\+Response \&res)
+\item 
+int \hyperlink{random__position__server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{random\+\_\+position\+\_\+server.\+cpp@{random\+\_\+position\+\_\+server.\+cpp}!main@{main}}
+\index{main@{main}!random\+\_\+position\+\_\+server.\+cpp@{random\+\_\+position\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{random__position__server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{random__position__server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 38 of file random\+\_\+position\+\_\+server.\+cpp.
+
+\index{random\+\_\+position\+\_\+server.\+cpp@{random\+\_\+position\+\_\+server.\+cpp}!rand\+\_\+pos@{rand\+\_\+pos}}
+\index{rand\+\_\+pos@{rand\+\_\+pos}!random\+\_\+position\+\_\+server.\+cpp@{random\+\_\+position\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{rand\+\_\+pos(holo\+\_\+control\+::\+Target\+Pos\+::\+Request \&req, holo\+\_\+control\+::\+Target\+Pos\+::\+Response \&res)}{rand_pos(holo_control::TargetPos::Request &req, holo_control::TargetPos::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool rand\+\_\+pos (
+\begin{DoxyParamCaption}
+\item[{holo\+\_\+control\+::\+Target\+Pos\+::\+Request \&}]{req, }
+\item[{holo\+\_\+control\+::\+Target\+Pos\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{random__position__server_8cpp_aa87fa309f7fd2e88fd4091f304ed3a47}{}\label{random__position__server_8cpp_aa87fa309f7fd2e88fd4091f304ed3a47}
+Server response returning two random values
+
+This function inserts two random values between -\/6.\+0 and 6.\+0 each inside the response field of a service.
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & (holo\+\_\+control\+::\+Target\+Pos\+::\+Request \&)\+: request field of the Target\+Pos service of package holo\+\_\+control, not utilized (being it acutally empty); \\
+\hline
+{\em res} & (holo\+\_\+control\+::\+Target\+Pos\+::\+Response \&)\+: response field of the Target\+Pos service of package holo\+\_\+control, is a Point (defined in \char`\"{}geometry\+\_\+msgs\char`\"{}) named \textquotesingle{}target\+\_\+pos\textquotesingle{} its fields x and y are set to a float random value between -\/6.\+0 and 6.\+0;\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em flag} & (bool)\+: flag unused, set to \textquotesingle{}true\textquotesingle{}; \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 32 of file random\+\_\+position\+\_\+server.\+cpp.
+

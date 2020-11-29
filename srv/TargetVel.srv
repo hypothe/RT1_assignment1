@@ -1,0 +1,8 @@
+# Service that holds in the response a twist computed depending on deisred and target position and mode
+# (eg. with or without simulated inertia, linear or non linear)
+
+geometry_msgs/Point current_pos
+geometry_msgs/Point target_pos
+int16 target_mode
+---
+geometry_msgs/Twist twist

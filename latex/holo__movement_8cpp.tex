@@ -1,0 +1,161 @@
+\hypertarget{holo__movement_8cpp}{}\section{holo\+\_\+movement.\+cpp File Reference}
+\label{holo__movement_8cpp}\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}holo\+\_\+control/\+Target\+Pos.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}holo\+\_\+control/\+Target\+Vel.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+Include dependency graph for holo\+\_\+movement.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{holo__movement_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{holo__movement_8cpp_aaf85da3833058c8adfd6b67cf0b36885}{norm2} (float x, float y, float tx, float ty)
+\item 
+void \hyperlink{holo__movement_8cpp_aef70658f8ec02213922917e67d9e1c76}{subscriber\+Callback} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&pose\+\_\+msg)
+\item 
+int \hyperlink{holo__movement_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Publisher \hyperlink{holo__movement_8cpp_a350594df3e8f6948c8462edfd41ce086}{pub}
+\item 
+ros\+::\+Service\+Client \hyperlink{holo__movement_8cpp_a9a132f5e7094e7dfbb0283cd6865552a}{client\+\_\+target}
+\item 
+ros\+::\+Service\+Client \hyperlink{holo__movement_8cpp_aa9a414283399446e6bf92415ebdac48e}{client\+\_\+vel}
+\item 
+geometry\+\_\+msgs\+::\+Point \hyperlink{holo__movement_8cpp_a856d701335ffc8b8bad1223902b1a009}{target\+\_\+pos}
+\item 
+float \hyperlink{holo__movement_8cpp_a7bf48396f7b1614eacfc04b4a25f434e}{dist\+\_\+th} = 0.\+1
+\item 
+int \hyperlink{holo__movement_8cpp_ac0c4717781a654470cef2abd04e7c1e2}{vel\+\_\+algorithm} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!main@{main}}
+\index{main@{main}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{holo__movement_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{holo__movement_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 109 of file holo\+\_\+movement.\+cpp.
+
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!norm2@{norm2}}
+\index{norm2@{norm2}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{norm2(float x, float y, float tx, float ty)}{norm2(float x, float y, float tx, float ty)}}]{\setlength{\rightskip}{0pt plus 5cm}float norm2 (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{tx, }
+\item[{float}]{ty}
+\end{DoxyParamCaption}
+)}\hypertarget{holo__movement_8cpp_aaf85da3833058c8adfd6b67cf0b36885}{}\label{holo__movement_8cpp_aaf85da3833058c8adfd6b67cf0b36885}
+Function to compute norm of vector
+
+This function computes the euclidean norm of the vector identified by starting and ending points passed as arguments
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & (float)\+: starting point X coordinate; \\
+\hline
+{\em y} & (float)\+: starting point Y coordinate; \\
+\hline
+{\em tx} & (float)\+: ending point X coordinate; \\
+\hline
+{\em ty} & (float)\+: ending point y coordinate;\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em norm2} & (float)\+: euclidean norm of the vector going from start(x,y) to end(x,y); \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 138 of file holo\+\_\+movement.\+cpp.
+
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!subscriber\+Callback@{subscriber\+Callback}}
+\index{subscriber\+Callback@{subscriber\+Callback}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{subscriber\+Callback(const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&pose\+\_\+msg)}{subscriberCallback(const nav_msgs::Odometry::ConstPtr &pose_msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void subscriber\+Callback (
+\begin{DoxyParamCaption}
+\item[{const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&}]{pose\+\_\+msg}
+\end{DoxyParamCaption}
+)}\hypertarget{holo__movement_8cpp_aef70658f8ec02213922917e67d9e1c76}{}\label{holo__movement_8cpp_aef70658f8ec02213922917e67d9e1c76}
+Callback publishing the velocity after reading a position
+
+This function computes the velocity published on the topic \char`\"{}/cmd\+\_\+vel\char`\"{} based on the estimated position retrieved from the messages in the \char`\"{}/odom\char`\"{} odometry topic. When the target position is reached a call to the Service \char`\"{}/target\+\_\+pos\char`\"{} is made in order to retrieve a new target position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pose\+\_\+msg} & (/nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr\&)\+: pointer to a message read from topic \char`\"{}/odom\char`\"{}, used to obtain estimated current position and, if the flag \textquotesingle{}pseudo\+\_\+inertia\textquotesingle{} = \textquotesingle{}true\textquotesingle{}, estimated current linear velocity; \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file holo\+\_\+movement.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!client\+\_\+target@{client\+\_\+target}}
+\index{client\+\_\+target@{client\+\_\+target}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{client\+\_\+target}{client_target}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Service\+Client client\+\_\+target}\hypertarget{holo__movement_8cpp_a9a132f5e7094e7dfbb0283cd6865552a}{}\label{holo__movement_8cpp_a9a132f5e7094e7dfbb0283cd6865552a}
+Service client used for obtaining target positions 
+
+Definition at line 39 of file holo\+\_\+movement.\+cpp.
+
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!client\+\_\+vel@{client\+\_\+vel}}
+\index{client\+\_\+vel@{client\+\_\+vel}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{client\+\_\+vel}{client_vel}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Service\+Client client\+\_\+vel}\hypertarget{holo__movement_8cpp_aa9a414283399446e6bf92415ebdac48e}{}\label{holo__movement_8cpp_aa9a414283399446e6bf92415ebdac48e}
+Service client used for obtaining target velocity 
+
+Definition at line 40 of file holo\+\_\+movement.\+cpp.
+
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!dist\+\_\+th@{dist\+\_\+th}}
+\index{dist\+\_\+th@{dist\+\_\+th}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{dist\+\_\+th}{dist_th}}]{\setlength{\rightskip}{0pt plus 5cm}float dist\+\_\+th = 0.\+1}\hypertarget{holo__movement_8cpp_a7bf48396f7b1614eacfc04b4a25f434e}{}\label{holo__movement_8cpp_a7bf48396f7b1614eacfc04b4a25f434e}
+Distance threshold used for determining if a destination is reached 
+
+Definition at line 42 of file holo\+\_\+movement.\+cpp.
+
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!pub@{pub}}
+\index{pub@{pub}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{pub}{pub}}]{\setlength{\rightskip}{0pt plus 5cm}ros\+::\+Publisher pub}\hypertarget{holo__movement_8cpp_a350594df3e8f6948c8462edfd41ce086}{}\label{holo__movement_8cpp_a350594df3e8f6948c8462edfd41ce086}
+Publisher used to publish velocities 
+
+Definition at line 38 of file holo\+\_\+movement.\+cpp.
+
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!target\+\_\+pos@{target\+\_\+pos}}
+\index{target\+\_\+pos@{target\+\_\+pos}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{target\+\_\+pos}{target_pos}}]{\setlength{\rightskip}{0pt plus 5cm}geometry\+\_\+msgs\+::\+Point target\+\_\+pos}\hypertarget{holo__movement_8cpp_a856d701335ffc8b8bad1223902b1a009}{}\label{holo__movement_8cpp_a856d701335ffc8b8bad1223902b1a009}
+Target position to reach, defined as a Point 
+
+Definition at line 41 of file holo\+\_\+movement.\+cpp.
+
+\index{holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}!vel\+\_\+algorithm@{vel\+\_\+algorithm}}
+\index{vel\+\_\+algorithm@{vel\+\_\+algorithm}!holo\+\_\+movement.\+cpp@{holo\+\_\+movement.\+cpp}}
+\subsubsection[{\texorpdfstring{vel\+\_\+algorithm}{vel_algorithm}}]{\setlength{\rightskip}{0pt plus 5cm}int vel\+\_\+algorithm = 0}\hypertarget{holo__movement_8cpp_ac0c4717781a654470cef2abd04e7c1e2}{}\label{holo__movement_8cpp_ac0c4717781a654470cef2abd04e7c1e2}
+Flag determining the criteria used for evaluating the velocity~\newline
+
+\begin{DoxyItemize}
+\item 0\+: velocity is directly proportional to current distance from target position;~\newline
+
+\item 1 \+: velocity is the weighted sum between one component, being proportional to current distance from target position and the previous velocity 
+\end{DoxyItemize}
+
+Definition at line 44 of file holo\+\_\+movement.\+cpp.
+

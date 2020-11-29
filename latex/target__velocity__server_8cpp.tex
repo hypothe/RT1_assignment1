@@ -1,0 +1,124 @@
+\hypertarget{target__velocity__server_8cpp}{}\section{target\+\_\+velocity\+\_\+server.\+cpp File Reference}
+\label{target__velocity__server_8cpp}\index{target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}geometry\+\_\+msgs/\+Twist.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}nav\+\_\+msgs/\+Odometry.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}holo\+\_\+control/\+Target\+Vel.\+h\char`\"{}}\\*
+Include dependency graph for target\+\_\+velocity\+\_\+server.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{target__velocity__server_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{target__velocity__server_8cpp_aef70658f8ec02213922917e67d9e1c76}{subscriber\+Callback} (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&pose\+\_\+msg)
+\item 
+bool \hyperlink{target__velocity__server_8cpp_a36957a375fbd4b38b8711d9aeeff44d3}{target\+\_\+vel} (holo\+\_\+control\+::\+Target\+Vel\+::\+Request \&req, holo\+\_\+control\+::\+Target\+Vel\+::\+Response \&res)
+\item 
+int \hyperlink{target__velocity__server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+geometry\+\_\+msgs\+::\+Twist \hyperlink{target__velocity__server_8cpp_ae43153a40663df7e24fce570690fff81}{current\+\_\+vel}
+\item 
+int \hyperlink{target__velocity__server_8cpp_ab66ed8e0098c0a86b458672a55a9cca9}{k} = 1
+\item 
+float \hyperlink{target__velocity__server_8cpp_a5bf563dfc55db9dac98ac73ed7a8df92}{alfa} = 0.\+1
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}!main@{main}}
+\index{main@{main}!target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{target__velocity__server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{target__velocity__server_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 97 of file target\+\_\+velocity\+\_\+server.\+cpp.
+
+\index{target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}!subscriber\+Callback@{subscriber\+Callback}}
+\index{subscriber\+Callback@{subscriber\+Callback}!target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{subscriber\+Callback(const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&pose\+\_\+msg)}{subscriberCallback(const nav_msgs::Odometry::ConstPtr &pose_msg)}}]{\setlength{\rightskip}{0pt plus 5cm}void subscriber\+Callback (
+\begin{DoxyParamCaption}
+\item[{const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr \&}]{pose\+\_\+msg}
+\end{DoxyParamCaption}
+)}\hypertarget{target__velocity__server_8cpp_aef70658f8ec02213922917e67d9e1c76}{}\label{target__velocity__server_8cpp_aef70658f8ec02213922917e67d9e1c76}
+Callback reading current estimated velocity and saving it for retrieval by the Service call
+
+This function updates the values saved inside the global variable \textquotesingle{}current\+\_\+vel\textquotesingle{} each time a new state estimation is published on the topic \char`\"{}/odom\char`\"{}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pose\+\_\+msg} & (const nav\+\_\+msgs\+::\+Odometry\+::\+Const\+Ptr\&)\+: the current estimated state of the robot, as published in the topic \char`\"{}/odom\char`\"{} \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 29 of file target\+\_\+velocity\+\_\+server.\+cpp.
+
+\index{target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}!target\+\_\+vel@{target\+\_\+vel}}
+\index{target\+\_\+vel@{target\+\_\+vel}!target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{target\+\_\+vel(holo\+\_\+control\+::\+Target\+Vel\+::\+Request \&req, holo\+\_\+control\+::\+Target\+Vel\+::\+Response \&res)}{target_vel(holo_control::TargetVel::Request &req, holo_control::TargetVel::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool target\+\_\+vel (
+\begin{DoxyParamCaption}
+\item[{holo\+\_\+control\+::\+Target\+Vel\+::\+Request \&}]{req, }
+\item[{holo\+\_\+control\+::\+Target\+Vel\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{target__velocity__server_8cpp_a36957a375fbd4b38b8711d9aeeff44d3}{}\label{target__velocity__server_8cpp_a36957a375fbd4b38b8711d9aeeff44d3}
+Server response returning target velocity
+
+Each time a call request is made to the Service \char`\"{}/\+Target\+Vel\char`\"{} a velocity value is computed based on the current and target point coordinates, passed in the request field of the Service, and on a \char`\"{}target\+\_\+mode\char`\"{} defining which of the implemented algorithm to use for the computation. Currently two such algorithms are implemented\+:~\newline
+
+\begin{DoxyItemize}
+\item 0\+: velocity is directly proportional to current distance from target position;~\newline
+
+\item 1\+: velocity is the weighted sum between one component being being proportional to current distance from target position, and the previous velocity;
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & (holo\+\_\+control\+::\+Target\+Vel\+::\+Request \&)\+: request field of the Target\+Vel service of package holo\+\_\+control, composed of two Point(s) called \textquotesingle{}current\+\_\+pos\textquotesingle{} and \textquotesingle{}target\+\_\+pos\textquotesingle{} and one integer called \textquotesingle{}target\+\_\+mode\textquotesingle{}; \\
+\hline
+{\em res} & (holo\+\_\+control\+::\+Target\+Pos\+::\+Response \&)\+: response field of the Target\+Vel service of package holo\+\_\+control, is a Twist (defined in \char`\"{}geometry\+\_\+msgs\char`\"{}) named \textquotesingle{}twist\textquotesingle{} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em flag} & (bool)\+: flag unused, set to \textquotesingle{}true\textquotesingle{}; \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 66 of file target\+\_\+velocity\+\_\+server.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\index{target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}!alfa@{alfa}}
+\index{alfa@{alfa}!target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{alfa}{alfa}}]{\setlength{\rightskip}{0pt plus 5cm}float alfa = 0.\+1}\hypertarget{target__velocity__server_8cpp_a5bf563dfc55db9dac98ac73ed7a8df92}{}\label{target__velocity__server_8cpp_a5bf563dfc55db9dac98ac73ed7a8df92}
+Weight in the sum in case the mode of the service is set to 1, simulating inertia 
+
+Definition at line 10 of file target\+\_\+velocity\+\_\+server.\+cpp.
+
+\index{target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}!current\+\_\+vel@{current\+\_\+vel}}
+\index{current\+\_\+vel@{current\+\_\+vel}!target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{current\+\_\+vel}{current_vel}}]{\setlength{\rightskip}{0pt plus 5cm}geometry\+\_\+msgs\+::\+Twist current\+\_\+vel}\hypertarget{target__velocity__server_8cpp_ae43153a40663df7e24fce570690fff81}{}\label{target__velocity__server_8cpp_ae43153a40663df7e24fce570690fff81}
+Twist used to contain the current estimated value of the robot velocities 
+
+Definition at line 7 of file target\+\_\+velocity\+\_\+server.\+cpp.
+
+\index{target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}!k@{k}}
+\index{k@{k}!target\+\_\+velocity\+\_\+server.\+cpp@{target\+\_\+velocity\+\_\+server.\+cpp}}
+\subsubsection[{\texorpdfstring{k}{k}}]{\setlength{\rightskip}{0pt plus 5cm}int k = 1}\hypertarget{target__velocity__server_8cpp_ab66ed8e0098c0a86b458672a55a9cca9}{}\label{target__velocity__server_8cpp_ab66ed8e0098c0a86b458672a55a9cca9}
+Coefficient used in the linear computation of instantaneous velocity 
+
+Definition at line 9 of file target\+\_\+velocity\+\_\+server.\+cpp.
+
