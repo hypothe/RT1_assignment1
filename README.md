@@ -38,7 +38,7 @@ topic _"/odom"_.
 
 ## Relational Graph
 
-![relations between nodes and topics](images/rosgraph_assignment1.png)
+![relations between nodes and topics](images/rosgraph_holo_control.png)
 - **holo_movement** is subscribed to _"/odom"_ and publishes in _"/cmd_vel"_, while 
 	calling Services _"/target_position"_ and _"/target_velocity"_
 - **random_position_server** serves for Service _"/target_position"_
