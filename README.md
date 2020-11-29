@@ -117,7 +117,7 @@ value passed as argument to that node (or the to the launch file).
 As previously mentioned the nodes in the package merely perform the computation by
 reading from the topics _"/odom"_ and publishing in _"/cmd_vel"_, thus an external 
 node must perform the simulation, for example the simulator shared by Professor Carmine
-Recchiuto at the link https://github.com/CarmineD8/assignment1.git which can be 
+Tommaso Recchiuto at the link https://github.com/CarmineD8/assignment1.git which can be 
 launched with
 ```bash
 $rosrun stage_ros stageros $(rospack find assignment1)/world/exercise.world
@@ -127,7 +127,7 @@ Note that that package in turn requires **stage_ros**, which can be obtained wit
 $sudo apt-get install ros-<your_ros_version>-stage-ros
 ```
 
-## Thanks
+## Credits
 
-Thanks to Professor Carmine Recchiuto for providing the simulator this package was tested
-on, and being my main source of knowledge for ROS development.
+Thanks to Professor Carmine Tommaso Recchiuto for providing the simulator this package 
+was tested on, and being my main source of knowledge for ROS development.
